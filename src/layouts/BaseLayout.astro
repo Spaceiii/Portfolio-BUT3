@@ -8,27 +8,16 @@ import Header from "../components/Header.astro";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Timothée - étudiant en informatique</title>
+    <link rel="stylesheet" href="/src/styles/global.css" />
 </head>
 <body>
-  <main>
+  <a class="skip-link sr-only" href="#main">Passer au contenu</a>
+  <main id="main">
     <Header />
 
-    <slot />
+    <div class="container">
+      <slot />
+    </div>
   </main>
 </body>
 </html>
-
-<style>
-  body {
-      margin: 0;
-  }
-
-  main {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #ffffff;
-    color: #333333;
-    font-family: Arial, sans-serif;
-  }
-</style>

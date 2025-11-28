@@ -1,44 +1,20 @@
 ---
 const { pathname } = Astro.url;
 ---
-<header>
-  <h1>Timothée Meyer</h1>
+<header class="site-header">
+  <div class="site-brand">
+    <h1>Timothée Meyer</h1>
+  </div>
 
-    <div>
-        <a href="/" aria-current={pathname.slice(1) === '' ? 'index' : 'false'}>A propos</a>
-        <a href="/projets" aria-current={pathname.slice(1) === 'projets' ? 'projets' : 'false'}>Projets</a>
+  <nav class="nav-group" aria-label="Navigation principale">
+    <div class="nav-links" id="primary-navigation">
+      <a href="/" aria-current={pathname.slice(1) === '' ? 'page' : undefined}>A propos</a>
+      <a href="/projets" aria-current={pathname.slice(1) === 'projets' ? 'page' : undefined}>Projets</a>
     </div>
+  </nav>
 
-  <div>
-      <a href="https://github.com/Spaceiii" target="_blank">Github</a>
-      <a href="/assets/MEYER_Timothée_CV.pdf" target="_blank">Télécharger mon CV</a>
+  <div class="actions">
+      <a class="btn--ghost" href="https://github.com/Spaceiii" target="_blank" rel="noopener noreferrer">Github</a>
+      <a class="btn" href="/assets/MEYER_Timothée_CV.pdf" target="_blank" rel="noopener noreferrer">Télécharger CV</a>
   </div>
 </header>
-
-<style>
-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f8f9fa;
-    padding: 1rem 2rem;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-a {
-    margin: 0 1rem;
-    text-decoration: none;
-    color: #333333;
-    font-weight: bold;
-    font-style: normal;
-}
-
-a[aria-current="false"] {
-    font-weight: normal;
-    font-style: normal;
-    text-decoration: none;
-}
-
-
-</style>

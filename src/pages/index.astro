@@ -1,8 +1,12 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
 ---
 <BaseLayout>
 	<h1>Page principale</h1>
+
+	<ProjectCard title="Mon super projet" description="Une description concise de mon super projet." tags={["test", "test2"]} image=""/>
+
 </BaseLayout>
 
 

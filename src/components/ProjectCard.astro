@@ -1,0 +1,39 @@
+---
+const {
+  title,
+  description = '',
+  image = '',
+  tags = [],
+  href = ''
+} = Astro.props as {
+  title: string;
+  description?: string;
+  image?: string;
+  tags?: string[];
+  href?: string;
+};
+---
+
+<article class="card project-card" role="group" aria-label={title}>
+  {image ? <img src={image} alt={title} /> : null}
+
+  <div class="card-body">
+    <h3 class="project-title">{title}</h3>
+
+    {description ? <p class="project-desc">{description}</p> : null}
+
+    {tags && tags.length ? (
+      <ul class="project-tags" aria-hidden={false} aria-label="Technologies utilisées">
+        {tags.map((t) => <li class="tag">{t}</li>)}
+      </ul>
+    ) : null}
+
+    {href ? (
+      <div class="project-actions">
+        <a class="btn" href={href} rel="noopener noreferrer">Voir le projet</a>
+        <!-- Optionnel: conserver bouton ghost si nécessaire -->
+        <a class="btn--ghost" href={href} aria-label={`Détails ${title}`}>Détails</a>
+      </div>
+    ) : null}
+  </div>
+</article>
