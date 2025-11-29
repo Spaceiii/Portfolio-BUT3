@@ -1,7 +1,59 @@
 ---
-
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+
+const projects = [
+  {
+    title: "Portfolio Personnel",
+    description: "Site portfolio moderne construit avec Astro pour présenter mes projets et compétences.",
+    image: "/favicon.svg",
+    tags: ["Astro", "TypeScript", "CSS"],
+    href: "https://github.com/Spaceiii"
+  },
+  {
+    title: "Application Web React",
+    description: "Application web interactive utilisant React et Node.js avec une base de données MongoDB.",
+    tags: ["React", "Node", "Express", "MongoDB"],
+    href: "https://github.com/Spaceiii"
+  },
+  {
+    title: "Dashboard Vue.js",
+    description: "Tableau de bord d'administration avec Vue.js et Tailwind CSS.",
+    tags: ["Vue", "TypeScript", "Tailwind"],
+    href: "https://github.com/Spaceiii"
+  },
+  {
+    title: "API RESTful",
+    description: "API backend robuste construite avec Node.js, Express et TypeScript.",
+    tags: ["Node", "Express", "TypeScript", "Docker"],
+    href: "https://github.com/Spaceiii"
+  },
+  {
+    title: "Site Web Responsive",
+    description: "Site web responsive moderne avec HTML5, CSS3 et JavaScript.",
+    tags: ["HTML", "CSS", "JavaScript"],
+    href: "https://github.com/Spaceiii"
+  },
+  {
+    title: "Projet Python",
+    description: "Application Python avec analyse de données et visualisation.",
+    tags: ["Python", "Git"],
+    href: "https://github.com/Spaceiii"
+  }
+];
 ---
+
 <BaseLayout>
-      <h1>Projets</h1>
+  <div class="container">
+    <div class="page-header">
+      <h1>Mes Projets</h1>
+      <p class="page-subtitle">Découvrez mes réalisations et projets personnels</p>
+    </div>
+
+    <div class="grid">
+      {projects.map((project) => (
+        <ProjectCard {...project} />
+      ))}
+    </div>
+  </div>
 </BaseLayout>
