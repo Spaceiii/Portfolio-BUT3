@@ -326,18 +326,24 @@ main .container{padding-top:var(--space-3);padding-bottom:2.5rem}
 @media (max-width: 767px) {
   /* Stack header items for narrow screens */
   .header-inner{
-    flex-direction:column;
-    align-items:stretch;
-    gap:1rem;
-    padding-block:0.85rem;
+    flex-direction:row;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:0.75rem;
+    padding-block:0.75rem;
   }
 
   .site-brand{
-    text-align:center;
+    flex: 0 0 auto;
   }
 
   .site-brand h1{
-    font-size:1.15rem;
+    font-size:1rem;
+  }
+
+  .nav-group {
+    order: 3;
+    flex: 1 0 100%;
   }
 
   .nav-links{
@@ -347,32 +353,33 @@ main .container{padding-top:var(--space-3);padding-bottom:2.5rem}
   }
 
   .nav-links a{
-    padding:.55rem .8rem;
-    min-height:44px;
-    font-size:.9rem;
+    padding:.5rem .75rem;
+    min-height:40px;
+    font-size:.88rem;
   }
 
   .actions{
     display:flex;
-    justify-content:center;
-    gap:.6rem;
-    width:100%;
-    flex-wrap:wrap;
+    justify-content:flex-end;
+    gap:.5rem;
+    margin-left: auto;
   }
 
   /* Ajuster les boutons sur mobile */
   .btn, .btn--ghost{
-    padding:.6rem .9rem;
-    font-size:.88rem;
+    padding:.55rem .8rem;
+    font-size:.85rem;
   }
 
   /* Cacher le texte des boutons sur très petits écrans, garder seulement les icônes */
-  @media (max-width: 380px) {
+  @media (max-width: 420px) {
     .btn-text{
       display:none;
     }
     .btn, .btn--ghost{
-      padding:.6rem .75rem;
+      padding:.6rem;
+      min-width: 42px;
+      justify-content: center;
     }
   }
 
@@ -386,7 +393,7 @@ main .container{padding-top:var(--space-3);padding-bottom:2.5rem}
 /* Medium screens */
 @media (min-width: 768px) and (max-width: 1023px) {
   .header-inner{
-    padding-block:1rem;
+    padding-block:0.9rem;
   }
 
   .actions{
@@ -395,18 +402,18 @@ main .container{padding-top:var(--space-3);padding-bottom:2.5rem}
 
   .btn, .btn--ghost{
     padding:.55rem 1rem;
-    font-size:.92rem;
+    font-size:.9rem;
   }
 }
 
 /* Larger screens: slight refinements */
 @media (min-width: 1024px){
   .header-inner{
-    padding-block:1.1rem;
+    padding-block:1rem;
   }
 
   .actions{
-    gap:0.8rem;
+    gap:0.75rem;
   }
 
   .site-brand h1{

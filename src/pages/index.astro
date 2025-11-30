@@ -1,15 +1,36 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
+import ContactForm from "../components/ContactForm.astro";
 ---
 <BaseLayout>
-	<h1>Page principale</h1>
+	<div class="page-header">
+		<h1>Timothée Meyer</h1>
+		<p class="page-subtitle">Étudiant en BUT Informatique - Développeur Full Stack</p>
+	</div>
+
+	<section class="about-content">
+		<p>Bienvenue sur mon portfolio ! Je suis étudiant en BUT Informatique, passionné par le développement logiciel et les technologies web modernes. Mon objectif est de devenir développeur logiciel polyvalent, capable de concevoir et réaliser des applications web, mobiles et desktop performantes.</p>
+
+		<p>Mes compétences couvrent un large éventail de technologies : JavaScript, TypeScript, React, Vue, Astro, Node.js, Express, Java, Kotlin, et bien d'autres. J'aime relever des défis techniques, créer des expériences utilisateur intuitives et développer des solutions robustes et évolutives.</p>
+	</section>
+
+	<ContactForm />
 </BaseLayout>
 
 
 <style>
-	h1 {
-		text-align: center;
-		margin-top: 2rem;
+	.about-content {
+		max-width: 700px;
+		margin: 0 auto var(--space-4);
+		padding: 0 var(--space-2);
+		margin-top: var(--space-3);
+	}
+
+	.about-content p {
+		margin-bottom: var(--space-3);
+		font-size: 1.05rem;
+		line-height: 1.7;
+		color: var(--color-text);
 	}
 </style>
