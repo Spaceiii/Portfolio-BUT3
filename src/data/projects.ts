@@ -17,106 +17,55 @@ export interface Project {
 // Liste de tous les projets
 export const projects: Project[] = [
   {
-    slug: "portfolio-personnel",
-    title: "Portfolio Personnel",
-    description: "Site portfolio moderne construit avec Astro pour présenter mes projets et compétences.",
-    longDescription: "Ce portfolio a été conçu pour présenter mes compétences en développement web de manière professionnelle et moderne. Utilisant Astro pour des performances optimales, il met en valeur mes projets et mon parcours.",
-    tags: ["Astro", "TypeScript", "CSS"],
-    githubUrl: "https://github.com/Spaceiii",
+    slug: "domaine-viticole-app",
+    title: "Application de gestion pour domaine viticole",
+    description: "Application web complète pour gérer les vins, les traductions et les réservations.",
+    longDescription: "J’ai développé une application web pour un vigneron comprenant une interface de gestion des stocks, un CRUD complet sur les vins, la gestion multilingue des fiches produits et un espace client permettant la réservation de bouteilles. Le tout a été conçu seul, de l’architecture backend au frontend. J’ai parfois douté sur les choix d’architecture ou la structure des données, mais cela m’a obligé à structurer proprement l’ensemble.",
+    tags: ["Vue", "Node.js", "Express", "PostgreSQL", "TypeScript"],
+    githubUrl: "",
+    liveUrl: "",
     features: [
-      "Design moderne et responsive",
-      "Performance optimisée avec Astro",
-      "Animations fluides et interactives",
-      "Accessibilité WCAG 2.1"
+      "CRUD complet des vins et gammes",
+      "Traductions multilingues (fr/en/ja)",
+      "Réservation de vins côté client",
+      "Authentification JWT",
+      "Dashboard d’administration"
     ],
-    challenges: "Le principal défi était de créer une expérience utilisateur fluide tout en maintenant d'excellentes performances. J'ai optimisé les images et utilisé le lazy loading pour garantir des temps de chargement rapides.",
-    learnings: "Ce projet m'a permis de maîtriser Astro et ses concepts de composants. J'ai également approfondi mes connaissances en accessibilité web et en optimisation des performances."
+    challenges: "Gérer la relation entre vins et traductions a été plus complexe que prévu. Le fait de travailler seul m’a forcé à tout structurer proprement, même quand je doutais des bonnes pratiques.",
+    learnings: "Meilleure compréhension des API REST, structuration d’un backend Express, gestion d’un ORM (Drizzle) et organisation d’un projet web complet.",
+    screenshots: []
   },
   {
-    slug: "application-web-react",
-    title: "Application Web React",
-    description: "Application web interactive utilisant React et Node.js avec une base de données MongoDB.",
-    longDescription: "Application full-stack permettant aux utilisateurs de gérer leurs tâches et projets de manière collaborative. L'architecture MERN garantit flexibilité et évolutivité.",
-    tags: ["React", "Node", "Express", "MongoDB"],
-    githubUrl: "https://github.com/Spaceiii",
+    slug: "arduino-alcohol-detection",
+    title: "Système de détection d’ivresse avec capteurs Arduino",
+    description: "Système combinant capteurs Arduino, backend Node et analyse Java.",
+    longDescription: "Projet basé sur plusieurs capteurs Arduino mesurant différentes données physiologiques pour estimer si une personne est potentiellement ivre. Le backend Node.js récupère les valeurs, Java traite les données, et MongoDB stocke les résultats. Plusieurs choix techniques m’ont fait hésiter, notamment sur la fiabilité des mesures, mais ça m’a poussé à réfléchir aux limites de l’IA dans un contexte physique.",
+    tags: ["Java", "Node.js", "MongoDB", "Arduino"],
     features: [
-      "Authentification sécurisée JWT",
-      "Gestion d'état avec Redux",
-      "API RESTful robuste",
-      "Temps réel avec WebSockets",
-      "Interface utilisateur réactive"
+      "Lecture en temps réel des capteurs",
+      "Analyse des données en Java",
+      "Stockage des valeurs et historiques",
+      "Dashboard simple pour les mesures"
     ],
-    challenges: "La gestion de l'état global et la synchronisation en temps réel entre plusieurs utilisateurs représentaient un défi technique important. J'ai utilisé Redux pour l'état et Socket.io pour la communication en temps réel.",
-    learnings: "J'ai développé une compréhension approfondie de l'architecture MERN et des meilleures pratiques pour construire des applications web évolutives."
+    challenges: "Synchroniser les mesures avec le backend et gérer l'incertitude des capteurs. La difficulté principale : interpréter des données imparfaites.",
+    learnings: "Gestion d’entrées matérielles, structuration d’API simples, stockage NoSQL, réflexion sur la qualité des données.",
+    screenshots: []
   },
   {
-    slug: "dashboard-vuejs",
-    title: "Dashboard Vue.js",
-    description: "Tableau de bord d'administration avec Vue.js et Tailwind CSS.",
-    longDescription: "Interface d'administration complète pour gérer les utilisateurs, visualiser les statistiques et monitorer les performances en temps réel. Design moderne avec Tailwind CSS.",
-    tags: ["Vue", "TypeScript", "Tailwind"],
-    githubUrl: "https://github.com/Spaceiii",
+    slug: "salon-agriculture",
+    title: "Gestion d’un événement type Salon de l’Agriculture",
+    description: "Simulation de l’organisation d’un grand événement avec outils web.",
+    longDescription: "Projet où nous devions simuler l’organisation complète du Salon de l’Agriculture : gestion des exposants, des stands, du planning et de la communication. Nous avons réalisé une application web pour structurer ces données. Plusieurs contraintes d’organisation m’ont poussé à remettre en question certaines approches : comment répartir les stands, comment éviter les collisions de planning, etc.",
+    tags: ["Node.js", "JavaScript", "Vue", "PostgreSQL"],
     features: [
-      "Graphiques et visualisations de données",
-      "Gestion des utilisateurs et permissions",
-      "Design responsive avec Tailwind CSS",
-      "Tableaux de données interactifs",
-      "Thème clair/sombre"
+      "Gestion des exposants et stands",
+      "Planning détaillé",
+      "Interface Vue simplifiée",
+      "API Node pour centraliser les données"
     ],
-    challenges: "L'intégration de multiples bibliothèques de visualisation de données tout en maintenant des performances optimales était un défi. J'ai implémenté du lazy loading pour les composants lourds.",
-    learnings: "Ce projet m'a permis de maîtriser Vue 3 avec la Composition API et d'explorer les possibilités offertes par Tailwind CSS pour créer des interfaces modernes rapidement."
-  },
-  {
-    slug: "api-restful",
-    title: "API RESTful",
-    description: "API backend robuste construite avec Node.js, Express et TypeScript.",
-    longDescription: "API RESTful complète avec authentification, validation des données, gestion des erreurs et documentation automatique. Déployée avec Docker pour faciliter le déploiement.",
-    tags: ["Node", "Express", "TypeScript", "Docker"],
-    githubUrl: "https://github.com/Spaceiii",
-    features: [
-      "Architecture REST complète",
-      "Authentification JWT et refresh tokens",
-      "Validation avec Joi",
-      "Documentation Swagger",
-      "Tests unitaires et d'intégration",
-      "Conteneurisation Docker"
-    ],
-    challenges: "Assurer la sécurité de l'API tout en maintenant de bonnes performances était crucial. J'ai implémenté rate limiting, validation stricte des données et gestion sécurisée des tokens.",
-    learnings: "J'ai approfondi mes connaissances en architecture backend, sécurité des APIs et bonnes pratiques de développement avec TypeScript."
-  },
-  {
-    slug: "site-web-responsive",
-    title: "Site Web Responsive",
-    description: "Site web responsive moderne avec HTML5, CSS3 et JavaScript.",
-    longDescription: "Site web entièrement responsive construit avec les technologies web fondamentales. Focus sur l'accessibilité, les performances et l'expérience utilisateur sur tous les appareils.",
-    tags: ["HTML", "CSS", "JavaScript"],
-    githubUrl: "https://github.com/Spaceiii",
-    features: [
-      "Design mobile-first",
-      "Animations CSS avancées",
-      "Optimisation SEO",
-      "JavaScript vanilla performant",
-      "Compatible tous navigateurs"
-    ],
-    challenges: "Créer un site moderne sans framework tout en garantissant la compatibilité avec les anciens navigateurs nécessitait une approche progressive enhancement.",
-    learnings: "Ce projet m'a rappelé l'importance de maîtriser les fondamentaux du web et m'a permis d'approfondir CSS Grid, Flexbox et les APIs JavaScript modernes."
-  },
-  {
-    slug: "projet-python",
-    title: "Projet Python",
-    description: "Application Python avec analyse de données et visualisation.",
-    longDescription: "Application d'analyse de données utilisant pandas, numpy et matplotlib pour traiter et visualiser de grands ensembles de données. Interface utilisateur créée avec Streamlit.",
-    tags: ["Python", "Git"],
-    githubUrl: "https://github.com/Spaceiii",
-    features: [
-      "Analyse de données avec pandas",
-      "Visualisations interactives",
-      "Interface Streamlit",
-      "Export des résultats",
-      "Traitement de gros volumes de données"
-    ],
-    challenges: "Optimiser les performances lors du traitement de fichiers de plusieurs Go nécessitait l'utilisation de techniques avancées comme le chunking et le traitement parallèle.",
-    learnings: "J'ai développé mes compétences en analyse de données et découvert l'écosystème Python pour la data science."
+    challenges: "La modélisation des données d’un tel événement était moins évidente qu’elle en avait l’air. Beaucoup de cas limites à prévoir.",
+    learnings: "Meilleure compréhension de la gestion d’événements, modélisation plus propre, collaboration en équipe.",
+    screenshots: []
   }
 ];
 
